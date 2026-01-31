@@ -49,6 +49,7 @@ of their charges and inversely proportional to the square of the distance betwee
 The force acts along the line joining the two charges.
 
 F = (1 / 4πϵ₀) × (q₁ q₂ / r²)
+
 ---
 
 
@@ -60,6 +61,7 @@ times the total electric
 charge enclosed by that surface.
 
 ∮ E · dA = Q / ϵ₀
+
 ---
 
 
@@ -71,6 +73,7 @@ distance from the element, and depends on the sine of the angle between the curr
 element and the line joining the element to the point.
 
 dB = (μ0 / 4π) * (I * (dl × r̂)) / r²
+
 ---
 
 
@@ -82,11 +85,13 @@ Maxwell’s Equations are four fundamental equations that describe how electric 
 ∇ · B = 0            (Gauss’s Law – Magnetism) 
 ∇ × E = −∂B/∂t       (Faraday’s Law) 
 ∇ × B = μ₀J + μ₀ϵ₀∂E/∂t (Ampère–Maxwell Law)
+
 ---
 
 
 
 ##  Software Design
+
 ```bash
 emlib
      __init__.py
@@ -101,9 +106,6 @@ test_emlib
           test_gauss.py
           test_biot_savart.py
           test_maxwell.py
-
-          
-
 
 
 ---
