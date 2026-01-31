@@ -92,7 +92,7 @@ Maxwell’s Equations are four fundamental equations that describe how electric 
 
 ##  Software Design
 
-```bash
+```text
 emlib
      __init__.py
      constants.py
