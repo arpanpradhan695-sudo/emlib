@@ -1,151 +1,133 @@
-#  Electromagnetic Theory Library (C++)
+#   Abstract
 
-A comprehensive *C++ Electromagnetic Theory library* that numerically implements the *fundamental laws of electromagnetism* and visualizes their physical behavior .  
-This project bridges *theoretical electromagnetism* with *computational physics*.
+This project presents the design and implementation of a Python library for solving fundamental laws of electromagnetism, including Coulomb’s law, Gauss’s law, Biot–Savart
+law, and Maxwell’s equations in one, two, and three dimensions. The library is modular,
+easy to use, and implemented using Python and NumPy. The correctness of the library
+is verified using test scripts.
+
 
 -----
-##  AIM
+##  Introduction
 
-The aim of this project is to design and develop a modular *Electromagnetic Theory library in C++* that numerically implements the fundamental laws of electromagnetism—*Coulomb’s Law, Gauss’s Law, Biot–Savart Law, and Maxwell’s Equations (1D, 2D, and 3D)*—and to visualize their behavior through computational simulations .
-
-------
-##  FEATURES
-
- Modular C++ library design  
- Numerical implementation of EM laws  
- 1D, 2D, and 3D Maxwell equation solvers   
- Clean, academic, and extendable structure  
+Electromagnetism is a fundamental branch of physics that deals with electric and magnetic phenomena. It explains interactions between electrically charged particles and the electric and magnetic fields they produce.
 
 ------
-##  THEORY
+###  Fundamental Laws Of Electromagnetism
+Coulomb's Law
+Gauss's Law
+Biot-Savart Law
+Ampere's Circuital Law
+Faraday's Law of electromagnetic induction
 
-Electromagnetism is a fundamental branch of physics that deals with the interaction of *electric charges, currents, electric fields, and magnetic fields*.  
-The entire classical theory of electromagnetism is unified through *Maxwell’s equations*, which explain how electric and magnetic fields are generated and how they propagate through space as electromagnetic waves.
+These laws were unified by James Clerk Maxwell in Maxwell's equtions.
+   
 
-This library implements the major laws of electromagnetism numerically to help students and researchers *understand physical behavior through computation*.
+------
+###  Applications Of Electromagnetism
+
+Electric power generation and transmission
+Motors and Generators
+Communication systems
+Medical imaging
+Electronics
 
 
-## (1️) Coulomb’s Law
+## Objectives
 
-Coulomb’s Law describes the *electrostatic force* between two stationary point charges.
+To design a modular python library
+To implement major electromagnetic laws
+To support 1D, 2D and 3d calculations
+To verify numerical corrections
 
-### Mathematical Form
+
+## Theory
+
+### (1) Coulomb's Law
+
+The electrostatic force between two point charges is directly proportional to the product
+of their charges and inversely proportional to the square of the distance between them.
+The force acts along the line joining the two charges.
+
 F = (1 / 4πϵ₀) × (q₁ q₂ / r²)
 ---
-### Physical Interpretation
-- Force is directly proportional to the product of charges  
-- Force is inversely proportional to the square of distance  
-- Like charges repel, unlike charges attract
-  
----
-### Computational Approach
-The force is computed numerically for varying distances, and the inverse-square nature is verified through analysis of the numerical data.
 
----
 
-## (2) Gauss’s Law (Electric)
+### (2) Gauss’s Law 
 
-Gauss’s Law relates the *electric flux* through a closed surface to the *total charge enclosed*.
+The total electric flux through any closed surface is equal to ε1
+0
+times the total electric
+charge enclosed by that surface.
 
-### Mathematical Form
 ∮ E · dA = Q / ϵ₀
----
-### Physical Interpretation
-- Electric flux depends only on enclosed charge  
-- Independent of the shape of the Gaussian surface  
-- Demonstrates symmetry in electric fields  
-
-### Computational Approach
-Electric flux is computed numerically for different charge values and visualized to verify linear proportionality.
 
 ---
 
-## (3️) Biot–Savart Law
 
-The Biot–Savart Law describes the *magnetic field produced by a steady electric current*.
+### (3️) Biot–Savart Law
 
-### Mathematical Form (Straight Current-Carrying Wire)
-B = (μ₀ I) / (2π r)
----
-### Physical Interpretation
-- Magnetic field strength decreases with distance  
-- Direction is determined by the right-hand thumb rule  
+The magnetic field at a point due to a small current element is directly proportional to
+the current and the length of the element, inversely proportional to the square of the
+distance from the element, and depends on the sine of the angle between the current
+element and the line joining the element to the point.
 
-### Computational Approach
-Magnetic field values are calculated for different distances as numerical data to demonstrate magnetic field decay.
+dB = (μ0 / 4π) * (I * (dl × r̂)) / r²
+
 
 ---
 
-## (4) Maxwell’s Equations
+### (4) Maxwell’s Equations
 
-Maxwell’s equations unify electricity and magnetism and predict the existence of *electromagnetic waves*.
+Maxwell’s Equations are four fundamental equations that describe how electric and magnetic fields are generated and how they interact with charges and currents.
 
-### Differential Form
 ∇ · E = ρ / ϵ₀        (Gauss’s Law – Electric) 
 ∇ · B = 0            (Gauss’s Law – Magnetism) 
 ∇ × E = −∂B/∂t       (Faraday’s Law) 
 ∇ × B = μ₀J + μ₀ϵ₀∂E/∂t (Ampère–Maxwell Law)
----
----
-
-## (5) Maxwell’s Equations – 1D Simulation
-
-### Description
-In one dimension, Maxwell’s equations describe *electromagnetic wave propagation* along a single axis.
-
-### Numerical Method
-- Finite Difference Time Domain (FDTD)
-- Discretized space and time
-
-### Outcome
-- Demonstrates oscillatory electric and magnetic fields  
-- Visualizes EM wave behavior  
-
----
-
-## (6) Maxwell’s Equations – 2D Simulation
-
-### Description
-In two dimensions, electromagnetic fields evolve on a planar grid.
-
-### Numerical Method
-- Finite difference spatial derivatives
-- Field evolution over time
-
-### Outcome
-- Demonstrates interaction of fields in space  
-- Useful for surface and planar EM problems  
-
----
-
-## (7) Maxwell’s Equations – 3D Representation
-
-### Description
-A simplified numerical representation of three-dimensional electric field components.
-
-### Purpose
-- Visualize time evolution of Ex, Ey, and Ez  
-- Introduce 3D electromagnetic behavior  
-
-### Educational Value
-- Foundation for advanced 3D FDTD solvers  
-- Bridges theory with real-world EM simulations  
 
 ---
 
 
 
-##  REQUIREMENTS
+##  Software Design
+---bash
+emlib
+     __init__.py
+     constants.py
+     coulomb.py
+     gauss.py
+     biot_savart.py
+     maxwell.py
+     
+test_emlib
+          test_coulomb.py
+          test_gauss.py
+          test_biot_savart.py
+          test_maxwell.py
 
-- C++ Compiler (g++)
-- GNU Make
+          
+
+
 
 ---
-##  HOW TO RUN
 
-```bash
- .\a.exe
- .\gauss_test.exe
- .\biot_savart_test.exe
- .\maxwell3d_test.exe
 
+##  Module Description
+
+Each module implements a specific electromagnetic law using a modular design.
+
+---
+
+##  Implementation 
+
+The library is implemented using Python and NumPy. Each law is implemented as a
+separate function supporting 1D, 2D, and 3D computations.
+
+##  Results and Verification
+
+
+All modules were tested using a demonstration script and produced correct numerical
+results.
+
+##  Conclusion 
+A modular Python library for electromagnetic laws was successfully developed and verified. The project is suitable for educational and computational use.
