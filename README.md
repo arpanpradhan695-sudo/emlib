@@ -60,7 +60,6 @@ times the total electric
 charge enclosed by that surface.
 
 ∮ E · dA = Q / ϵ₀
-
 ---
 
 
@@ -72,9 +71,8 @@ distance from the element, and depends on the sine of the angle between the curr
 element and the line joining the element to the point.
 
 dB = (μ0 / 4π) * (I * (dl × r̂)) / r²
-
-
 ---
+
 
 ### (4) Maxwell’s Equations
 
@@ -84,7 +82,6 @@ Maxwell’s Equations are four fundamental equations that describe how electric 
 ∇ · B = 0            (Gauss’s Law – Magnetism) 
 ∇ × E = −∂B/∂t       (Faraday’s Law) 
 ∇ × B = μ₀J + μ₀ϵ₀∂E/∂t (Ampère–Maxwell Law)
-
 ---
 
 
